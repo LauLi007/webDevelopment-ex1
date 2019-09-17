@@ -1,0 +1,381 @@
+/*Estilos globales*/
+
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    font-size: 62.5%; /* RESET para rems --> 62.5% son 10px*/
+    box-sizing: border-box;
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+    font-family: 'Lato', sans-serif;
+    line-height: 2;
+}
+img{
+    max-width: 100%; /* Esto es conveniente usarlo siempre. Permite que las imagenes sean responsivas*/
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
+}
+p{
+    font-size: 1.5rem;
+}
+
+
+/* Utilidades */
+.seccion{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.fw-300{
+    font-weight: 300;
+}
+.alinear-centro{
+    text-align: center;
+}
+.d-block{
+    display: block!important;
+}
+
+.contenido-centrado{
+    max-width: 1000px;
+    padding: 3rem 0 5rem 0;
+}
+
+/* Botones */
+.boton{
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    display: inline-block;
+    margin-top: 2rem; 
+    text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.boton-naranja{
+    background: #EB8F4E;
+}
+
+.boton-azul{
+    background: #3979B3;
+}
+
+
+
+/* Header */
+.site-header{
+    height: 9vh; /* ó padding: 1rem 0;*/
+    background: #333333;
+}
+.site-header.inicio{
+    background: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover; 
+    height: 100vh;  /*vh --> viewport height. Se adecúa a la altutra de la pantalla del usuario. */
+    min-height: 60rem; /* va a ocupar mínimo 600 px, por lo que la imagen siempre se verá bien aunque la ventana sea muy pequeña*/
+}
+
+.barra-navegacion{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 3rem 0;
+
+}
+.contenido-header{
+    height: 100%; /*utiliza todo el espacio del padre*/
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenido-header h1{
+    color: #ffffff;
+    padding-bottom: 2rem;
+    font-size: 4rem;
+    max-width: 40rem; /* = a 600px */
+    line-height: 1.5; /* interlineado de 1.5 renglones*/
+}
+
+
+
+
+
+/* Barras navegación header y footer*/
+.links-nav a{
+    color: #ffffff;
+    text-decoration: none; 
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+.links-nav a:hover{
+    color: #B3D9FF;
+}
+.links-nav a:last-of-type{
+    margin-right: 0;
+}
+
+
+
+/* Section - Icono Nosotros*/
+.icono-nosotros{
+    display: flex;
+    justify-content: space-between
+}
+.icono{
+    flex-basis: calc(33.3% - 3rem); /* calcula el 33.3% menos 10px. Combina con justify-content en el div padre donde display: flex;*/
+    text-align: center;
+}
+.icono h3{
+    text-transform: uppercase;
+}
+
+
+/*Anuncios Casas y Apartamentos*/
+
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Definimos en el contenedor padre flex-wrap: y especifica si los elementos hijos son obligados a permanecer en una misma línea o si pueden fluir en varias líneas */
+}
+.anuncio{
+    flex-shrink: 0; /* Por defecto es 1 y se hace más pequeño cuando sea posible. Si ponemos cero no se va a encoger y mantendrá el tamaño indicado en flex-basis: */
+    flex-basis: calc(33.3% - 1rem);
+    border: 0.1rem solid #b5b5b5;
+    background: #f5f5f5;
+    margin-bottom: 2rem;
+
+}
+.contenido-anuncio{
+    padding: 2rem;
+}
+.contenido-anuncio h3, 
+.contenido-anuncio p{
+    margin: 0;
+}
+.contenido-anuncio h3{
+    font-size: 2.5rem;
+}
+.precio{
+    color: #3979B3;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.icono-caracteristicas{
+    list-style: none;
+    padding: 0; 
+    display: flex;
+    justify-content: space-evenly; /* centramos los iconos y numeros peri tenemos que quitar el flex: 1; en el estilo de abajo. */
+    flex: 1;
+    max-width: 500px;
+}
+.icono-caracteristicas li{
+    /* flex: 1;  ocupa todo el espacio */
+    display: flex; /* coloca el <p> al miso nivel de los iconos*/
+}
+.icono-caracteristicas img{
+    margin-right: 2rem;
+}
+.ver-todos{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* Contacto */
+.imagen-contacto{
+    background: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex; 
+    align-items: center;
+
+}
+.contenido-contacto{
+    flex: 1;
+    color: #ffffff;
+}
+.contenido-contacto{
+    font-size: 1.8rem;
+}
+
+/* Sección inferior*/
+.seccion-inferior{
+    display: flex;
+    justify-content: space-between;
+}
+.seccion-inferior .blog{
+    flex-basis: 60%; /* El bloque blog toma el 60% y los testimoniales el 40% menos 10 pixeles*/
+}
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem);
+}
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+.entrada-blog .imagen{
+    flex-basis: 40%;
+}
+.entrada-blog .texto-blog{
+    flex-basis: calc(60% - 3rem);
+}
+.texto-blog h4{
+    margin: 0; 
+    line-height: 2.8rem; 
+}
+.texto-blog a{
+    color: #000000;
+    text-decoration: none; 
+}
+.texto-blog h4::after{ /* Pseudo-elemento- Elemento que podemos agregar ante so despues de un elemento. No se pueden seleccionr */
+    content: '';
+    display: block;
+    width: 15rem; 
+    height: .5rem;
+    background-color:#3979B3;
+    margin-top: 1rem;
+}
+.texto-blog span{
+    color: #3979B3;
+}
+
+/* Testimoniales */
+.testimoniales-clientes{
+    background-color: #3979B3;
+    font-size: 1.8rem;
+    padding: 1rem 2rem 1rem 2rem;
+    border-top-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    color: #ffffff;
+}
+
+.testimoniales p{
+    text-align: right;
+    padding-bottom: 3rem;
+}
+/* Footer */
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+}
+.copyright{
+    margin: 0;
+    color: #ffffff;
+}
+.contenedor-footer{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* PÁGINAS INTERNAS */
+/* Página nosotros */
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 50% 50%; /* ó grid-template-columns: 1fr 1fr; fr = fracción //  :repeat(2, 50%); */
+    grid-column-gap: 2.5rem;
+}
+
+.texto-nosotros blockquote{
+    font-weight: 800;
+    font-size: 2rem;
+    margin: 0;
+    padding: 3rem 0 1rem 0;
+
+}
+
+/* Página anuncio */
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.img-centrado{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Entrada blog */
+.texto-entrada span{
+    color: #3979B3;
+}
+
+
+/* Contacto */
+.contacto p{
+    font-size: 1.4rem;
+    color: #585858
+}
+
+legend{
+    font-size: 1.8rem;
+    color: #585858;
+}
+
+label{
+    display: block;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+input:not([type="submit"]), textarea, select{
+    background-color: #e4e2e2;
+    padding: 1rem;
+    display: block;
+    width: 100%; 
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.4rem;
+}
+
+.form-contacto{
+    display: flex;
+    justify-content: space-between;
+    max-width: 20rem;
+    align-items: center;
+    
+}
+input[type="radio"]{
+    width: auto;
+    margin: 0;
+}
+
+select{
+    -webkit-appearance: none;
+}
+
+textarea{
+    height: 25rem;
+}
+
+
